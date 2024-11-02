@@ -33,7 +33,8 @@ function Register() {
       );
       setMessage(response.data.message);
       setIsOtpPhase(true);
-      clearFormFields();
+      clearFormFields(); 
+      setEmail(email); 
     } catch (error) {
       setMessage('Registration failed. Please try again.');
     } finally {
@@ -142,7 +143,6 @@ function Register() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              disabled={isOtpPhase}
             />
           </div>
           {isOtpPhase ? (

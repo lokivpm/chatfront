@@ -1,6 +1,6 @@
 # frontend/Dockerfile
 
-FROM node:22
+FROM node:22 as build
 
 
 WORKDIR /app

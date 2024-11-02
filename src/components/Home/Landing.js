@@ -43,7 +43,7 @@ function Landing() {
             const result = await response.json();
             setUploadStatus(result.message);
 
-        
+            window.location.reload();
             navigate('/document-chat', { state: { fileContent: result.fileContent } });
             setSelectedFile(null); 
         } catch (error) {
