@@ -75,7 +75,7 @@ function Register() {
       );
       setMessage(response.data.message);
       clearFormFields();
-      // navigate('/');
+      navigate('/');
       // window.location.reload(); 
     } catch (error) {
       setMessage('Login failed. Please try again.');
