@@ -65,7 +65,7 @@ function Register() {
   };
   
   const handleLogin = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setLoading(true);
     try {
       const response = await axios.post(
@@ -75,8 +75,8 @@ function Register() {
       );
       setMessage(response.data.message);
       clearFormFields();
-      navigate('/');
-      window.location.reload(); 
+      // navigate('/');
+      // window.location.reload(); 
     } catch (error) {
       setMessage('Login failed. Please try again.');
     } finally {
