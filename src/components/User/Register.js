@@ -64,35 +64,23 @@ function Register() {
     }
   };
   
-
-
-
-  
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
-   
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_FAST_API}/login/`,
         { email, password },
-        { withCredentials: true }
+        { withCredentials: true } 
       );
       setMessage(response.data.message);
       clearFormFields();
       navigate('/');
-      window.location.reload();
+      window.location.reload(); 
     } catch (error) {
-      if (error.response) {
-        console.error("Error response:", error.response.status, error.response.data);
-        setMessage(error.response.data.error || "An error occurred during login.");
-      } else if (error.request) {
-        console.error("Error request:", error.request);
-        setMessage("No response received from server.");
-      } else {
-        console.error("Error message:", error.message);
-        setMessage("An unknown error occurred.");
-      }
+      setMessage('Login failed. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
